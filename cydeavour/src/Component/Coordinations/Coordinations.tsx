@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import {Card} from "@mui/material";
 
 export default function Coordinations() {
     const gradientColors = ['#4750AB', '#5E80EB'];
@@ -23,6 +24,12 @@ export default function Coordinations() {
             <TextField label="Search for any IP address or domain" id="fullWidth" style={{ marginTop: '20px',
             backgroundColor:'#fff', borderRadius:'10px'
             }}/>
+            <Card style={{backgroundColor:'#fff', marginTop: '20px'}}>
+                <Typography>IP Address:</Typography>
+                <Typography>Location:</Typography>
+                <Typography>Timezone:</Typography>
+                <Typography>ISP:</Typography>
+            </Card>
         </div>
     );
 }
