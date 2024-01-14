@@ -58,7 +58,7 @@ const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, post
                         </div>
                         <div style={dividerStyle}></div>
                         <div>
-                        <Typography>IP Timezone</Typography>
+                        <Typography>Timezone</Typography>
                         <Typography variant='h5' style={{color:'#000'}}>UTC: {utc}</Typography>
                         </div>
                         <div style={dividerStyle}></div>
