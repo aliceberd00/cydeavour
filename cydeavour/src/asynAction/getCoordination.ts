@@ -1,7 +1,7 @@
 import { backendUrl } from "../globalConfig";
-export const getCoordination = async () => {
+export const getCoordination = async (ip: string) => {
     try {
-        const response = await fetch(backendUrl, {
+        const response = await fetch(backendUrl+ip, {
             method: 'GET'
         });
 

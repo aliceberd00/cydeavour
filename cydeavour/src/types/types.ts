@@ -1,4 +1,4 @@
-
+import {Dispatch, SetStateAction} from "react";
 
 export interface ITypes {
     ip?: string | undefined,
@@ -24,4 +24,11 @@ export interface ICoordinationsProps {
     longitude?: number | undefined,
     utc?: string | undefined,
     isp?: string | undefined,
+    allData?: ITypes,
+    setAllData: Dispatch<SetStateAction<ITypes | undefined>>
+}
+
+export interface IMapProps {
+    latitude?: number | undefined,
+    longitude?: number | undefined,
 }
