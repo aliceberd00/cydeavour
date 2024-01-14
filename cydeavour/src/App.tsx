@@ -4,7 +4,8 @@ import './App.css';
 import Coordinations from "./Component/Coordinations/Coordinations";
 import {ITypes} from "./types/types";
 import {getCoordination} from "./asynAction/getCoordination";
-
+import Map from "./Component/Coordinations/Map";
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
 function App() {
     const [allData, setAllData] = useState<ITypes>()
@@ -28,10 +29,8 @@ function App() {
                 postal={allData?.postal}
                 utc={allData?.timezone?.utc}
                 isp={allData?.connection?.isp}
-                latitude={allData?.latitude}
-                longitude={allData?.longitude}
             />
-
+            <Map latitude={allData?.latitude} longitude={allData?.longitude}/>
         </>
     );
 }

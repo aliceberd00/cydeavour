@@ -31,14 +31,6 @@ const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, post
         margin: '0 10px', // Отступы от линии до текстовых блоков
     };
 
-    const defaultProps = {
-        center: {
-            lat: 10.99835602,
-            lng: 77.01502627
-        },
-        zoom: 11
-    };
-
 
     return (
         <>
@@ -80,19 +72,6 @@ const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, post
                     </CardContent>
                 </Box>
         </div>
-            <div style={{ height: '100vh', width: '100%' }}>
-                <GoogleMapReact
-                    bootstrapURLKeys={{ key: "" }}
-                    defaultCenter={defaultProps.center}
-                    defaultZoom={defaultProps.zoom}
-                >
-                    {/*<AnyReactComponent*/}
-                    {/*    lat={59.955413}*/}
-                    {/*    lng={30.337844}*/}
-                    {/*    text="My Marker"*/}
-                    {/*/>*/}
-                </GoogleMapReact>
-            </div>
         </>
     );
 }
