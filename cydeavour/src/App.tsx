@@ -28,7 +28,10 @@ function App() {
                 postal={allData?.postal}
                 utc={allData?.timezone?.utc}
                 isp={allData?.connection?.isp}
+                latitude={allData?.latitude}
+                longitude={allData?.longitude}
             />
+
         </>
     );
 }

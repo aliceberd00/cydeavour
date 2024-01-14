@@ -20,6 +20,10 @@ export interface ITypes {
     country?: string | undefined,
     city?: string | undefined,
     postal?: string | undefined,
+
+    latitude?: number | undefined,
+    longitude?: number | undefined,
+
     timezone?: {
         utc: string | undefined,
     },
@@ -33,6 +37,8 @@ export interface ICoordinationsProps {
     country?: string | undefined,
     city?: string | undefined,
     postal?: string | undefined,
+    latitude?: number | undefined,
+    longitude?: number | undefined,
     utc?: string | undefined,
     isp?: string | undefined,
 }

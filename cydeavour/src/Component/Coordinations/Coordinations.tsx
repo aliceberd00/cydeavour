@@ -5,10 +5,11 @@ import {Box} from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import {ICoordinationsProps, ITypes} from "../../types/types";
 // import SearchIcon from '@mui/icons-material/Search';
+import GoogleMapReact from 'google-map-react';
 
-
+// const AnyReactComponent = ({ text: any }) => <div>{text.toString()}</div>;
 const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, postal, utc, isp ,
-                                                 }) => {
+                                                          longitude, latitude}) => {
     const gradientColors = ['#4750AB', '#5E80EB'];
 
     const gradientStyle: React.CSSProperties = {
@@ -30,7 +31,17 @@ const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, post
         margin: '0 10px', // Отступы от линии до текстовых блоков
     };
 
+    const defaultProps = {
+        center: {
+            lat: 10.99835602,
+            lng: 77.01502627
+        },
+        zoom: 11
+    };
+
+
     return (
+        <>
         <div style={gradientStyle}>
             <Typography variant='h4' style={{ fontWeight: 600 }}>
                 IP Address Tracker
@@ -58,7 +69,7 @@ const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, post
                         </div>
                         <div style={dividerStyle}></div>
                         <div>
-                        <Typography>Timezone</Typography>
+                        <Typography>IP Timezone</Typography>
                         <Typography variant='h5' style={{color:'#000'}}>UTC: {utc}</Typography>
                         </div>
                         <div style={dividerStyle}></div>
@@ -69,6 +80,20 @@ const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, post
                     </CardContent>
                 </Box>
         </div>
+            <div style={{ height: '100vh', width: '100%' }}>
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: "" }}
+                    defaultCenter={defaultProps.center}
+                    defaultZoom={defaultProps.zoom}
+                >
+                    {/*<AnyReactComponent*/}
+                    {/*    lat={59.955413}*/}
+                    {/*    lng={30.337844}*/}
+                    {/*    text="My Marker"*/}
+                    {/*/>*/}
+                </GoogleMapReact>
+            </div>
+        </>
     );
 }
 export default Coordinations
