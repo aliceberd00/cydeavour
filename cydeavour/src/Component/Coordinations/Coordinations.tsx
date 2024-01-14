@@ -2,12 +2,13 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import {Box} from '@mui/material';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+import {ICoordinationsProps, ITypes} from "../../types/types";
 // import SearchIcon from '@mui/icons-material/Search';
-export default function Coordinations() {
+
+
+const Coordinations: React.FC<ICoordinationsProps> = ({  ip, country, city, postal, utc, isp ,
+                                                 }) => {
     const gradientColors = ['#4750AB', '#5E80EB'];
 
     const gradientStyle: React.CSSProperties = {
@@ -48,42 +49,26 @@ export default function Coordinations() {
                     <CardContent style={{display: 'flex'}}>
                         <div>
                         <Typography>IP Address</Typography>
-                        <Typography variant='h5' style={{color:'#000'}}>192.212.174.101</Typography>
+                        <Typography variant='h5' style={{color:'#000'}}>{ip}</Typography>
                         </div>
                         <div style={dividerStyle}></div>
                         <div>
                         <Typography>IP Location</Typography>
-                        <Typography variant='h5' style={{color:'#000'}}>Brooklyn, NY, 10001</Typography>
+                        <Typography variant='h5' style={{color:'#000'}}>{country},{city}, {postal}</Typography>
                         </div>
                         <div style={dividerStyle}></div>
                         <div>
                         <Typography>IP Timezone</Typography>
-                        <Typography variant='h5' style={{color:'#000'}}>UTC -05:00</Typography>
+                        <Typography variant='h5' style={{color:'#000'}}>UTC: {utc}</Typography>
                         </div>
                         <div style={dividerStyle}></div>
                         <div>
                         <Typography>ISP</Typography>
-                        <Typography variant='h5' style={{color:'#000'}}>SpaceX, StarLink</Typography>
+                        <Typography variant='h5' style={{color:'#000'}}>{isp}</Typography>
                         </div>
                     </CardContent>
                 </Box>
-            {/*<Card style={cardStyle}>*/}
-            {/*    <div>*/}
-            {/*        <Typography>IP Address</Typography>*/}
-            {/*        <div style={dividerStyle}></div>*/}
-            {/*    </div>*/}
-            {/*    <div>*/}
-            {/*        <Typography>Location</Typography>*/}
-            {/*        <div style={dividerStyle}></div>*/}
-            {/*    </div>*/}
-            {/*    <div>*/}
-            {/*        <Typography>Timezone</Typography>*/}
-            {/*        <div style={dividerStyle}></div>*/}
-            {/*    </div>*/}
-            {/*    <div>*/}
-            {/*        <Typography>ISP</Typography>*/}
-            {/*    </div>*/}
-            {/*</Card>*/}
         </div>
     );
 }
+export default Coordinations
