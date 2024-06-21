@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICoordinationsProps } from "../../types/types";
+import {IMapProps} from "../../types/types";
 import GoogleMapReact from "google-map-react";
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
 import { googleMapKey } from "../../globalConfig";
@@ -7,7 +7,7 @@ import { googleMapKey } from "../../globalConfig";
 
 
 
-const Map: React.FC<ICoordinationsProps> = ({ longitude, latitude }) => {
+const Map: React.FC<IMapProps> = ({ longitude, latitude }) => {
     const mapContainerStyle = {
         width: '100vw',
         height: '50vh',
@@ -32,7 +32,7 @@ const Map: React.FC<ICoordinationsProps> = ({ longitude, latitude }) => {
 
         return (
             <>
-                <div style={{ height: '70vh', width: '100%' }}>
+                <div style={{ height: '50vh', width: '100%' }}>
                     <GoogleMap
                         mapContainerStyle={mapContainerStyle}
                         zoom={10}
